@@ -1,0 +1,32 @@
+{
+    "name": "lord2800/alternator",
+    "description": "A dynamically routed quick scaffolding framework based on Dynamo",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeff Hubbard",
+            "email": "lord2800@gmail.com"
+        }
+    ],
+    "repositories": [{
+        "type": "vcs",
+        "url": "https://github.com/lord2800/dynamo.git"
+    }, {
+        "type": "vcs",
+        "url": "https://github.com/lord2800/di.php.git"
+    }, {
+        "type": "vcs",
+        "url": "https://github.com/lord2800/convey.git"
+    }],
+    "minimum-stability": "dev",
+    "require": {
+        "lord2800/dynamo": "dev-master",
+        "sabre/http": "dev-master",
+        "lord2800/convey": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Alternator\\": "src/"
+        }
+    }
+}

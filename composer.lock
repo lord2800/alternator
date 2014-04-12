@@ -1,0 +1,253 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+    ],
+    "hash": "bf981c3633061614db38082bb7f78738",
+    "packages": [
+        {
+            "name": "lord2800/convey",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lord2800/convey.git",
+                "reference": "c9e448a5d6e4d58fb06bdd6fb93df8a700b0b7aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lord2800/convey/zipball/c9e448a5d6e4d58fb06bdd6fb93df8a700b0b7aa",
+                "reference": "c9e448a5d6e4d58fb06bdd6fb93df8a700b0b7aa",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "dev-master",
+                "phpunit/phpunit": "dev-master",
+                "squizlabs/php_codesniffer": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Convey": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Hubbard",
+                    "email": "lord2800@gmail.com"
+                }
+            ],
+            "description": "A micro-routing utility based on PCRE and Express",
+            "support": {
+                "source": "https://github.com/lord2800/convey/tree/master",
+                "issues": "https://github.com/lord2800/convey/issues"
+            },
+            "time": "2013-12-28 21:20:51"
+        },
+        {
+            "name": "lord2800/di.php",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lord2800/di.php.git",
+                "reference": "09ea6bf2c28e35b3e839aca5e89951e7061b1b64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lord2800/di.php/zipball/09ea6bf2c28e35b3e839aca5e89951e7061b1b64",
+                "reference": "09ea6bf2c28e35b3e839aca5e89951e7061b1b64",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "dev-master",
+                "phpunit/phpunit": "dev-master",
+                "squizlabs/php_codesniffer": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "DI": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Hubbard",
+                    "email": "lord2800@gmail.com"
+                }
+            ],
+            "description": "A dependency injector, rather than a container or service locator.",
+            "support": {
+                "source": "https://github.com/lord2800/di.php/tree/master",
+                "issues": "https://github.com/lord2800/di.php/issues"
+            },
+            "time": "2014-04-12 20:10:37"
+        },
+        {
+            "name": "lord2800/dynamo",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lord2800/dynamo.git",
+                "reference": "137ac18ad30a947b7e2a2f7fcd2abb88b8333f16"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lord2800/dynamo/zipball/137ac18ad30a947b7e2a2f7fcd2abb88b8333f16",
+                "reference": "137ac18ad30a947b7e2a2f7fcd2abb88b8333f16",
+                "shasum": ""
+            },
+            "require": {
+                "lord2800/di.php": "master@dev",
+                "php": ">=5.5.0"
+            },
+            "require-dev": {
+                "lord2800/convey": "master@dev",
+                "mikey179/vfsstream": "master@dev",
+                "phpdocumentor/phpdocumentor": "master@dev",
+                "phpunit/phpunit": "4.0.*@dev",
+                "sabre/http": "master@dev",
+                "squizlabs/php_codesniffer": "master@dev"
+            },
+            "suggest": {
+                "lord2800/convey": "Lightweight flexible micro-router (required for Dynamo\\WebApp)",
+                "sabre/http": "HTTP request handling with full unit tests (required for Dynamo\\WebApp)"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Dynamo": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Hubbard",
+                    "email": "lord2800@gmail.com"
+                }
+            ],
+            "description": "A generator-based lightweight framework",
+            "support": {
+                "source": "https://github.com/lord2800/dynamo/tree/master",
+                "issues": "https://github.com/lord2800/dynamo/issues"
+            },
+            "time": "2014-04-12 20:49:53"
+        },
+        {
+            "name": "sabre/event",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fruux/sabre-event.git",
+                "reference": "14f284eede050859e72ac41064df0eac25327190"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fruux/sabre-event/zipball/14f284eede050859e72ac41064df0eac25327190",
+                "reference": "14f284eede050859e72ac41064df0eac25327190",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Sabre\\Event": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Evert Pot",
+                    "email": "evert@rooftopsolutions.nl",
+                    "homepage": "http://evertpot.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The sabre/event library provides utilities for lightweight event-based programming",
+            "homepage": "https://github.com/fruux/sabre-event",
+            "keywords": [
+                "events"
+            ],
+            "time": "2013-07-19 12:46:56"
+        },
+        {
+            "name": "sabre/http",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fruux/sabre-http.git",
+                "reference": "7775674a24a41e3e95314141a45730ba7311c6a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fruux/sabre-http/zipball/7775674a24a41e3e95314141a45730ba7311c6a1",
+                "reference": "7775674a24a41e3e95314141a45730ba7311c6a1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=5.4",
+                "sabre/event": "~1.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "suggest": {
+                "ext-curl": " to make http requests with the Client class"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Sabre\\HTTP": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Evert Pot",
+                    "email": "evert@rooftopsolutions.nl",
+                    "homepage": "http://www.rooftopsolutions.nl/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "The sabre/http library provides utilities for dealing with http requests and responses. ",
+            "homepage": "https://github.com/fruux/sabre-http",
+            "keywords": [
+                "http"
+            ],
+            "time": "2014-03-26 15:49:56"
+        }
+    ],
+    "packages-dev": [
+
+    ],
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "lord2800/dynamo": 20,
+        "sabre/http": 20,
+        "lord2800/convey": 20
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
+}
