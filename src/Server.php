@@ -7,7 +7,7 @@ use Dynamo\WebApp,
 	Dynamo\Middleware;
 
 class Server extends WebApp {
-	public function config() {
+	private function createPDO() {
 		if(empty($_ENV['ALTERNATOR_DSN'])) {
 			throw new \Exception('Connection string missing');
 		}
@@ -15,10 +15,67 @@ class Server extends WebApp {
 		$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 		$pdo->setAttribute(\PDO::ATTR_EMULATE_PREPARES, false);
 		$pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_OBJ);
+		return $pdo;
+	}
+
+	private static function determineResource($path) {
+		$parts = explode('/', $path);
+		return [
+			'name' => $parts[1],
+			'id' => key_exists(2, $parts) ? $parts[2] : 0
+		];
+	}
+
+	public function post(Resource $resource, HttpRequest $request, HttpResponse $response) {
+		$res = self::determineResource($request->getUrl());
+		if(!empty($res['id'])) {
+			$response->setStatus(400);
+			$response->setBody(json_encode(['message' => 'You must not specify an ID when creating a resource']));
+			return;
+		}
+		if(!$resource->create($res['name'], json_decode($request->getBody()))) {
+			$response->setStatus(500);
+		}
+	}
+
+	public function put(Resource $resource, HttpRequest $request, HttpResponse $response) {
+		$res = self::determineResource($request->getUrl());
+		if(empty($res['id'])) {
+			$response->setStatus(400);
+			$response->setBody(json_encode(['message' => 'You must specify an ID when saving a resource']));
+		}
+		if(!$resource->save($res['name'], json_decode($request->getBody()))) {
+			$response->setStatus(500);
+		}
+	}
+
+	public function delete(Resource $resource, HttpRequest $request, HttpResponse $response) {
+		$res = self::determineResource($request->getUrl());
+		if(empty($res['id'])) {
+			$response->setStatus(400);
+			$response->setBody(json_encode(['message' => 'You must specify an ID when deleting a resource']));
+		}
+		if(!$resource->delete($res['name'], $res['id'])) {
+			$response->setStatus(500);
+		}
+	}
+
+	public function get(Resource $resource, HttpRequest $request, HttpResponse $response) {
+		$res = self::determineResource($request->getUrl());
+		$result = $resource->retrieve($res['name'], $res['id']);
+		if(empty($result) && !empty($res['id'])) {
+			$response->setStatus(404);
+		}
+		// return single responses as an object, and multi-responses as an array--regardless of output count
+		$response->setBody(json_encode(!is_array($result) && empty($res['id']) ? [$result] : $result, true));
+	}
+
+	public function config() {
+		$pdo = $this->createPDO();
+		$stderr = fopen('php://stderr', 'a+');
 
 		$this->injector->provide('pdo', $pdo);
 		$this->injector->provide('resource', new Resource($pdo));
-		$stderr = fopen('php://stderr', 'a+');
 		$this->injector->provide('logger', function () use (&$stderr) {
 			return function ($line) use (&$stderr) { fprintf($stderr, $line . PHP_EOL); };
 		});
@@ -26,15 +83,8 @@ class Server extends WebApp {
 		$this->register(new Middleware\RequestDuration());
 		$this->register(new Middleware\CORS(['*'], true));
 
-		$this->router->get('*', function (Resource $resource, HttpRequest $request, HttpResponse $response) {
-			$parts = explode('/', substr($request->getUrl(), 1));
-			$name = $parts[0];
-			$id = 0;
-			if(key_exists(1, $parts)) {
-				$id = $parts[1];
-			}
-			$result = empty($id) ? $resource->retrieveAll($name) : $resource->retrieveOne($name, ['and' => ['lhs' => 'id', 'op' => '=', 'rhs' => $id]]);
-			$response->setBody(json_encode($result, true));
-		});
+		foreach(['get', 'put', 'post', 'delete'] as $method) {
+			$this->router->add($method, '*', [$this, $method]);
+		}
 	}
 }
