@@ -82,6 +82,7 @@ class Server extends WebApp {
 
 		$this->register(new Middleware\RequestDuration());
 		$this->register(new Middleware\CORS(['*'], true));
+		$this->register(function (HttpResponse $response) { yield; $response->setContentType('application/json'); });
 
 		foreach(['get', 'put', 'post', 'delete'] as $method) {
 			$this->router->add($method, '*', [$this, $method]);
