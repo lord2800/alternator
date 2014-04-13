@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b768a7c44410c06f859d2b224984b179",
+    "hash": "f0f34d870183d7ba981f69b6ecc200b6",
     "packages": [
         {
             "name": "lord2800/convey",

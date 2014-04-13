@@ -8,16 +8,6 @@
             "email": "lord2800@gmail.com"
         }
     ],
-    "repositories": [{
-        "type": "vcs",
-        "url": "https://github.com/lord2800/dynamo.git"
-    }, {
-        "type": "vcs",
-        "url": "https://github.com/lord2800/di.php.git"
-    }, {
-        "type": "vcs",
-        "url": "https://github.com/lord2800/convey.git"
-    }],
     "minimum-stability": "dev",
     "require": {
         "lord2800/dynamo": "dev-master",
