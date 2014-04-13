@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "bf981c3633061614db38082bb7f78738",
+    "hash": "b768a7c44410c06f859d2b224984b179",
     "packages": [
         {
             "name": "lord2800/convey",
@@ -52,12 +52,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lord2800/di.php.git",
-                "reference": "09ea6bf2c28e35b3e839aca5e89951e7061b1b64"
+                "reference": "7cc03180bfb69af19624e3ff4f5523e5c2232e25"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lord2800/di.php/zipball/09ea6bf2c28e35b3e839aca5e89951e7061b1b64",
-                "reference": "09ea6bf2c28e35b3e839aca5e89951e7061b1b64",
+                "url": "https://api.github.com/repos/lord2800/di.php/zipball/7cc03180bfb69af19624e3ff4f5523e5c2232e25",
+                "reference": "7cc03180bfb69af19624e3ff4f5523e5c2232e25",
                 "shasum": ""
             },
             "require-dev": {
@@ -85,7 +85,7 @@
                 "source": "https://github.com/lord2800/di.php/tree/master",
                 "issues": "https://github.com/lord2800/di.php/issues"
             },
-            "time": "2014-04-12 20:10:37"
+            "time": "2014-04-13 02:49:53"
         },
         {
             "name": "lord2800/dynamo",
@@ -93,12 +93,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lord2800/dynamo.git",
-                "reference": "137ac18ad30a947b7e2a2f7fcd2abb88b8333f16"
+                "reference": "141aba161cfbee2ad9623fd77aca017739092e7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lord2800/dynamo/zipball/137ac18ad30a947b7e2a2f7fcd2abb88b8333f16",
-                "reference": "137ac18ad30a947b7e2a2f7fcd2abb88b8333f16",
+                "url": "https://api.github.com/repos/lord2800/dynamo/zipball/141aba161cfbee2ad9623fd77aca017739092e7b",
+                "reference": "141aba161cfbee2ad9623fd77aca017739092e7b",
                 "shasum": ""
             },
             "require": {
@@ -137,7 +137,7 @@
                 "source": "https://github.com/lord2800/dynamo/tree/master",
                 "issues": "https://github.com/lord2800/dynamo/issues"
             },
-            "time": "2014-04-12 20:49:53"
+            "time": "2014-04-13 03:15:36"
         },
         {
             "name": "sabre/event",
